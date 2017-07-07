@@ -1,0 +1,50 @@
+gg = open('D:rdata/cbi/bbwrok04.txt', 'w')
+f = open('D:rdata/cbi/bbcut1006.txt', 'r')
+s=[]
+r=[]
+#dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'} 幹竟出現在自爆的定義key.value=>value.value
+dict = {'Name': '0', 'Age': '1', 'Class': '2','Name1': '0', 'Age1': '1', 'Class1': '2'}
+
+for line in f:
+    w=[]
+    k=''
+    nv=1
+    a=line.split(' ')
+    print line
+    for i in a:
+     print i
+     i=i.replace('\n','').replace('.','').replace(',','').replace('?','').replace(';','').replace('!','').replace('\'','')
+     i=i.replace(')','')
+     i=i.replace(':','')
+     nv=str(nv)
+     b=i
+     k=k+nv
+     
+     if dict.has_key(b)==False:
+      dict[b] = nv
+     else :
+      p=dict.get(b,0)   
+      p=int(p)
+      p=p+1
+      p=str(p)
+      dict[b] = p
+
+keyes=dict.keyes()
+ 
+s=[]
+t=[]
+n=[]
+for i,j in dict.items():
+ print i,j
+ s=s+[int(j)]
+ n=n+[[int(j),[i,j]]]
+
+n.sort()
+for i in n:
+ 
+ w='\''+i[1][0]+'\''          # add '' to word become 'word' use '\''
+ w=w.replace('\n','')
+ print w
+ gg.write('['+w+','+str(i[0])+']'+'\n')
+
+gg.close()
