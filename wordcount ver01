@@ -2,7 +2,7 @@ gg = open('D:rdata/cbi/bbwrok04.txt', 'w')
 f = open('D:rdata/cbi/bbcut1006.txt', 'r')
 s=[]
 r=[]
-#dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'} 幹竟出現在自爆的定義key.value=>value.value
+#dict = {'Name': 'Zara', 'Age': 7, 'Class': 'First'} key.value=>value.value
 dict = {'Name': '0', 'Age': '1', 'Class': '2','Name1': '0', 'Age1': '1', 'Class1': '2'}
 
 for line in f:
